@@ -5,6 +5,9 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/link.thingscloud/freeswitch-esl/badge.svg)](https://maven-badges.herokuapp.com/maven-central/link.thingscloud/freeswitch-esl/)
 
     FreeSWITCH Event Socket 客户端，基于 Netty 4.1.x
+    Fork from https://github.com/zhouhailin/freeswitch-esl-all
+
+
 
 ## InboundClient
 
