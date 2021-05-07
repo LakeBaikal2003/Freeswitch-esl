@@ -209,6 +209,16 @@ public interface InboundClient extends InboundClientService {
     CommandResponse sendEvent(String addr, SendEvent sendEvent);
 
     /**
+     *  执行一个app
+     * @param addr 服务器地址
+     * @param app  app名称
+     * @param param 参数
+     * @param uuid 通话唯一标志
+     * @return
+     */
+    CommandResponse execute(String addr, String app, String param, String uuid);
+
+    /**
      * Send a {@link link.thingscloud.freeswitch.esl.transport.SendMsg} command to FreeSWITCH.  This client requires that the {@link link.thingscloud.freeswitch.esl.transport.SendMsg}
      * has a call UUID parameter.
      * <p>

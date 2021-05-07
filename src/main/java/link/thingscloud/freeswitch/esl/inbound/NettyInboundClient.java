@@ -113,6 +113,15 @@ public class NettyInboundClient extends AbstractInboundClient {
 
     }
 
+    @Override
+    public  CommandResponse execute(String addr, String app, String param, String uuid){
+        SendMsg msg = new SendMsg(uuid);
+        msg.addCallCommand("execute");
+        msg.addExecuteAppName(app);
+        msg.addExecuteAppArg(param);
+        return  sendMessage(addr, msg);
+    }
+
     /**
      * {@inheritDoc}
      */

@@ -28,6 +28,9 @@ public class EslEventHeaderNames {
      * {@code "Event-Name"}
      */
     public static final String EVENT_NAME = "Event-Name";
+
+    public static final  String EVENT_HEARTBEAT  = "HEARTBEAT";
+
     /**
      * {@code "Event-Date-Local"}
      */

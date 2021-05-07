@@ -167,6 +167,10 @@ abstract class AbstractInboundClient extends AbstractNettyInboundClient implemen
                 if (response.getContentType().equals(EslHeaders.Value.COMMAND_REPLY)) {
                     CommandResponse reply = new CommandResponse("auth " + password, response);
                     serverOption.state(ConnectState.AUTHED);
+                    // 订阅事件成功后
+                    synchronized (addr.intern()){
+                        addr.intern().notify();
+                    }
                     log.info("Auth response success={}, message=[{}]", reply.isOk(), reply.getReplyText());
                     if (!option().events().isEmpty()) {
                         StringBuilder sb = new StringBuilder();

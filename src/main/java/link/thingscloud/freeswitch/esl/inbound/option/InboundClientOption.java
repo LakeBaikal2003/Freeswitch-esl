@@ -533,6 +533,22 @@ public class InboundClientOption {
     }
 
     /**
+     * <p>addEvents.</p>
+     *
+     * @param list a {@link String} object.
+     * @return a {@link InboundClientOption} object.
+     */
+    public InboundClientOption addEvents(List<String> list) {
+        if (!list.isEmpty()) {
+            events.addAll(list);
+            if (eventListener != null) {
+                eventListener.addEvents(list);
+            }
+        }
+        return this;
+    }
+
+    /**
      * <p>cancelEvents.</p>
      *
      * @return a {@link link.thingscloud.freeswitch.esl.inbound.option.InboundClientOption} object.
